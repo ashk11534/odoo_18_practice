@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_dashboard.AwesomeDashboard" owl="1">
+        <div class="container wt-dashboard">
+            <div class="dashboard-menu mt-3 d-flex justify-content-center gap-3">
+                <div class="dashboard-menu-item rounded bg-dark p-3 d-flex justify-content-center w-25 align-items-center flex-column cursor-pointer" t-on-click="redirectToSales">
+                    <h5 class="text-white fw-bold">Total sales</h5>
+                    <h6 class="text-white"><t t-esc="salesCount.count"/></h6>
+                </div>
+
+                <div class="dashboard-menu-item rounded bg-info p-3 d-flex justify-content-center w-25 align-items-center flex-column cursor-pointer" t-on-click="redirectToProducts">
+                    <h5 class="text-white fw-bold">Total products</h5>
+                    <h6 class="text-white"><t t-esc="productsCount.count"/></h6>
+                </div>
+
+                <div class="dashboard-menu-item rounded bg-danger p-3 d-flex justify-content-center w-25 align-items-center flex-column">
+                    <h5 class="text-white fw-bold">Total purchases</h5>
+                    <h6 class="text-white">330</h6>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>
