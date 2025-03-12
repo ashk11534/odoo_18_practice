@@ -4,19 +4,44 @@
     <t t-name="awesome_dashboard.AwesomeDashboard" owl="1">
         <div class="container wt-dashboard">
             <div class="dashboard-menu mt-3 d-flex justify-content-center gap-3">
-                <div class="dashboard-menu-item rounded bg-dark p-3 d-flex justify-content-center w-25 align-items-center flex-column cursor-pointer" t-on-click="redirectToSales">
+                <div class="dashboard-menu-item rounded bg-dark p-3 d-flex justify-content-center align-items-center flex-column cursor-pointer"
+                     t-on-click="redirectToSales">
                     <h5 class="text-white fw-bold">Total sales</h5>
                     <h6 class="text-white"><t t-esc="salesCount.count"/></h6>
                 </div>
 
-                <div class="dashboard-menu-item rounded bg-info p-3 d-flex justify-content-center w-25 align-items-center flex-column cursor-pointer" t-on-click="redirectToProducts">
+                <div class="dashboard-menu-item rounded bg-info p-3 d-flex justify-content-center align-items-center flex-column cursor-pointer"
+                     t-on-click="redirectToProducts">
                     <h5 class="text-white fw-bold">Total products</h5>
                     <h6 class="text-white"><t t-esc="productsCount.count"/></h6>
                 </div>
 
-                <div class="dashboard-menu-item rounded bg-danger p-3 d-flex justify-content-center w-25 align-items-center flex-column">
-                    <h5 class="text-white fw-bold">Total purchases</h5>
+                <div class="dashboard-menu-item rounded bg-danger p-3 d-flex justify-content-center align-items-center flex-column">
+                    <h5 class="text-white fw-bold">Total purchase orders</h5>
                     <h6 class="text-white">330</h6>
+                </div>
+            </div>
+            <div class="top-sales-and-purchase-orders d-flex justify-content-center mt-4 gap-4">
+                <div class="top-sales" style="width: 48%;">
+                    <h5 class="mb-3">Latest sales (10)</h5>
+                    <div class="top-sales-container d-flex gap-2 flex-wrap">
+                        <t t-foreach="topSales.sales" t-as="sale" t-key="sale.sale_id">
+                            <div class="top-sale-item p-4 bg-secondary rounded cursor-pointer"
+                                 t-att-data-sale-id="sale.sale_id" t-on-click="openSaleOrder">
+                                <h6 t-esc="sale.sale_name" t-att-data-sale-id="sale.sale_id" t-on-click="openSaleOrder"/>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+                <div class="top-purchase-orders" style="width: 48%;">
+                    <h5 class="mb-3">Latest purchase orders (10)</h5>
+                    <div class="top-purchase-orders-container d-flex gap-2 flex-wrap">
+                        <t t-foreach="topPO.po" t-as="po" t-key="po.purchase_order_id">
+                            <div class="top-purchase-order-item p-4 bg-secondary rounded cursor-pointer" t-att-data-purchase-order-id="po.purchase_order_id" t-on-click="openPurchaseOrder">
+                                <h6 t-esc="po.purchase_order_name" t-att-data-purchase-order-id="po.purchase_order_id" t-on-click="openPurchaseOrder"/>
+                            </div>
+                        </t>
+                    </div>
                 </div>
             </div>
         </div>

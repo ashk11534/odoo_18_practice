@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <template id="school_management_dashboard_template" name="School management dashboard template">
+        <t t-call="school_management.school_management_base_template">
+            <t t-set="head">
+                <link rel="stylesheet" href="/school_management/static/css/dashboard.css"/>
+            </t>
+
+            <div class="main-content">
+                <div class="dashboard-left">
+                    <div class="company-logo-container">
+                        <img src="/school_management/static/images/digitech-icon.png" class="company-logo"/>
+                    </div>
+                    <img src="/school_management/static/images/hamburger-menu.svg" class="sidebar-close-btn"/>
+                </div>
+                <div class="dashboard-right">
+                    <img src="/school_management/static/images/hamburger-menu-close.svg" class="sidebar-open-btn"/>
+                </div>
+            </div>
+
+            <t t-set="custom_js">
+                <script src="/school_management/static/js/dashboard.js"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

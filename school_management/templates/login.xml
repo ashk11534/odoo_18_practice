@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <template id="school_management_login_template" name="School management login template">
+
+        <t t-call="school_management.school_management_base_template">
+
+            <t t-set="head">
+
+                <link rel="stylesheet" href="/school_management/static/css/login.css"/>
+
+            </t>
+
+            <div class="main-content">
+                <div class="login-form">
+                    <div class="login-form-left">
+                        <img class="login-form-illustration"
+                             src="/school_management/static/images/login-illustration.png"/>
+                    </div>
+                    <div class="login-form-right">
+                        <form action="POST">
+                            <img class="login-form-heading-image"
+                                 src="/school_management/static/images/digitech-icon.png"/>
+                            <input type="email" name="email" placeholder="Enter your email" id="email-input"
+                                   autocomplete="off"/>
+                            <input type="password" name="password" placeholder="Enter your password"
+                                   id="password-input"
+                                   autocomplete="off"/>
+                            <input type="submit" class="form-submit-btn" value="Login"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </t>
+
+    </template>
+
+</odoo>

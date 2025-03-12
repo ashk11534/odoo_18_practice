@@ -44,3 +44,29 @@ class AwesomeDashboard(http.Controller):
     def retrieve_products_count(self):
         products_count = request.env['product.template'].sudo().search_count([])
         return products_count
+
+    @http.route('/fetch-top-sales', type='json', auth='public', csrf=False)
+    def fetch_top_sales(self):
+        top_sales = request.env['sale.order'].sudo().search([], limit=10, order='id desc')
+        top_sales_list = []
+
+        for sale in top_sales:
+            top_sales_list.append({
+                'sale_id': sale.id,
+                'sale_name': sale.name
+            })
+
+        return top_sales_list
+
+    @http.route('/fetch-top-purchase-orders', type='json', auth='public', csrf=False)
+    def fetch_top_purchase_orders(self):
+        top_purchase_orders = request.env['purchase.order'].sudo().search([], limit=10, order='id desc')
+        top_purchase_orders_list = []
+
+        for purchase_order in top_purchase_orders:
+            top_purchase_orders_list.append({
+                'purchase_order_id': purchase_order.id,
+                'purchase_order_name': purchase_order.name
+            })
+
+        return top_purchase_orders_list

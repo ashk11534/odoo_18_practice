@@ -1,0 +1,110 @@
+
+body{
+    background: linear-gradient(45deg, #ff512f, #f09819);
+}
+
+.main-content{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-form-left{
+    width: 50%;
+}
+
+.login-form-illustration{
+    width: 100%;
+}
+
+.login-form-right{
+    width: 50%;
+}
+
+.login-form-right form{
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-form-heading-image{
+    width: 130px;
+    height: 100px;
+    object-fit: contain;
+}
+
+#email-input, #password-input{
+    width: 100%;
+    padding: 10px;
+    border-radius:5px;
+    border: 1px solid #fb622957;
+    background-color: transparent;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+#email-input{
+    margin-bottom: 10px;
+}
+
+.form-submit-btn{
+    width: 100%;
+    background-color: #FB6229;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer !important;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Responsiveness (start) */
+
+@media(max-width: 1400px){}
+
+@media(max-width: 1200px){
+    .login-form-left{
+        width: 40%;
+    }
+
+    .login-form-right{
+        width: 60%;
+    }
+}
+
+@media(max-width: 992px){
+    .login-form-left{
+        display: none;
+    }
+}
+
+@media(max-width: 768px){
+    .login-form-right{
+        width: 100%;
+    }
+}
+
+@media(max-width: 576px){
+
+}
+
+/* Responsiveness (end) */

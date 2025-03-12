@@ -1,0 +1,63 @@
+body{
+    background-color: #fff;
+}
+
+.main-content{
+    display: flex;
+    margin-top: 10px;
+}
+
+.dashboard-left{
+    position: relative;
+    width: 20%;
+    padding: 15px;
+    background-color: #2f3542;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    min-height: 200px;
+}
+
+.dashboard-right{
+    position: relative;
+    width: 80%;
+    padding: 15px;
+    background-color: #f1f2f6;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 200px;
+}
+
+.dashboard-right-left-radius{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.company-logo-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.company-logo{
+    width: 150px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.sidebar-close-btn{
+    position: absolute;
+    width: 50px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.sidebar-open-btn{
+    position: absolute;
+    width: 50px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    display: none;
+}

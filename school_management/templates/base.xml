@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <template id="school_management_base_template" name="School management base template">
+
+        <html lang="en">
+
+            <head>
+
+                <meta charset="utf-8"/>
+
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+                <link type="image/x-icon" rel="shortcut icon" href="/school_management/static/images/digitech-icon.png"/>
+
+                <link rel="stylesheet" href="/school_management/static/css/bootstrap.css"/>
+
+                <link rel="stylesheet" href="/school_management/static/css/base.css"/>
+
+                <t t-raw="head"/>
+
+            </head>
+
+            <body>
+
+                <div class="container-fluid">
+
+                    <t t-raw="0"/>
+
+                </div>
+
+                <script src="/school_management/static/js/bootstrap.js"/>
+
+                <script src="/school_management/static/js/jquery.js"/>
+
+                <t t-raw="custom_js"/>
+
+            </body>
+
+        </html>
+
+    </template>
+</odoo>
