@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    //Toggling sidebar (start)
+    // Toggling sidebar (start)
 
     $('.sidebar-close-btn').click(function(){
         $('.dashboard-left').animate({width: '0', left: '-100%'}, "slow").hide('slow');
@@ -14,6 +14,25 @@ $(document).ready(function(){
         $('.sidebar-open-btn').fadeOut('slow');
     })
 
-    //Toggling sidebar (end)
+    // Toggling sidebar (end)
+
+    // Toggling power button content (start)
+
+    let isPowerButtonContentOpened = false;
+
+    $('.power-button-icon').click(function(){
+        isPowerButtonContentOpened = !isPowerButtonContentOpened;
+
+        if(isPowerButtonContentOpened){
+            $('.power-btn-content').fadeIn('slow');
+        }
+
+        else{
+            $('.power-btn-content').fadeOut('slow');
+        }
+
+    })
+
+    // Toggling power button content (end)
 
 })

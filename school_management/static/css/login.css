@@ -1,6 +1,6 @@
 
 body{
-    background: linear-gradient(45deg, #ff512f, #f09819);
+    background: linear-gradient(45deg, #0170ba, #114363);
 }
 
 .main-content{
@@ -52,7 +52,7 @@ body{
     width: 100%;
     padding: 10px;
     border-radius:5px;
-    border: 1px solid #fb622957;
+    border: 1px solid #0170ba5c;
     background-color: transparent;
     outline: none;
     font-family: "Poppins", sans-serif;
@@ -65,7 +65,7 @@ body{
 
 .form-submit-btn{
     width: 100%;
-    background-color: #FB6229;
+    background-color: #0170ba;
     color: #fff;
     border-radius: 5px;
     margin-top: 15px;

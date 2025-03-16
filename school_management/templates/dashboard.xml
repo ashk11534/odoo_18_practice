@@ -14,9 +14,70 @@
                         <img src="/school_management/static/images/digitech-icon.png" class="company-logo"/>
                     </div>
                     <img src="/school_management/static/images/hamburger-menu.svg" class="sidebar-close-btn"/>
+
+                    <div class="dashboard-left-menus mt-5">
+                        <button class="dashboard-menu"><img src="/school_management/static/images/dashboard-menu-icon.svg"/> Dashboard</button>
+                    </div>
                 </div>
                 <div class="dashboard-right">
-                    <img src="/school_management/static/images/hamburger-menu-close.svg" class="sidebar-open-btn"/>
+                    <div class="dashboard-right-header">
+                        <img src="/school_management/static/images/hamburger-menu-close.svg" class="sidebar-open-btn"/>
+                        <div class="placeholder-button"></div>
+                        <img src="/school_management/static/images/power-button-icon.svg" class="power-button-icon"/>
+                    </div>
+
+                    <div class="power-btn-content">
+                        <button>Profile</button>
+                        <button>Logout</button>
+                    </div>
+
+                    <div class="dashboard-menu-content mt-3">
+                        <div class="dashboard-sub-menus">
+                            <div class="dashboard-sub-menu staffs">
+                                <img src="/school_management/static/images/hamburger-menu-close.svg" class="dashboard-sub-menu-icon"/>
+                                <div>
+                                    <h5 class="mb-2">STAFFS</h5>
+                                    <h6>26</h6>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-sub-menu students">
+                                <img src="/school_management/static/images/hamburger-menu-close.svg" class="dashboard-sub-menu-icon"/>
+                                <div>
+                                    <h5 class="mb-2">STUDENTS</h5>
+                                    <h6>270</h6>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-sub-menu subjects">
+                                <img src="/school_management/static/images/hamburger-menu-close.svg" class="dashboard-sub-menu-icon"/>
+                                <div>
+                                    <h5 class="mb-2">SUBJECTS</h5>
+                                    <h6>18</h6>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-sub-menu sessions">
+                                <img src="/school_management/static/images/hamburger-menu-close.svg" class="dashboard-sub-menu-icon"/>
+                                <div>
+                                    <h5 class="mb-2">SESSIONS</h5>
+                                    <h6>10</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-report-summary mt-3 p-2">
+                            <div class="dashboard-report-summary-header mb-4">
+                                <img src="/school_management/static/images/subject-icon.svg" class="dashboard-report-summary-header-icon"/>
+                                <h6 class="text-center">Subject Report Summary</h6>
+                            </div>
+
+                            <div class="dashboard-report-summary-filters">
+                                
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

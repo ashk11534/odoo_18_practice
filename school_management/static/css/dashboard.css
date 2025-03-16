@@ -5,6 +5,7 @@ body{
 .main-content{
     display: flex;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .dashboard-left{
@@ -15,7 +16,31 @@ body{
     color: #fff;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    min-height: 200px;
+    height: 100vh;
+}
+
+.dashboard-menu{
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    transition: all 0.3s;
+}
+
+.dashboard-menu img{
+    width: 20px;
+}
+
+.dashboard-menu:hover{
+    scale: 1.05;
 }
 
 .dashboard-right{
@@ -25,7 +50,17 @@ body{
     background-color: #f1f2f6;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    min-height: 200px;
+    height: 100vh;
+}
+
+.dashboard-right-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0170BA;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 10px;
 }
 
 .dashboard-right-left-radius{
@@ -54,10 +89,90 @@ body{
 }
 
 .sidebar-open-btn{
-    position: absolute;
     width: 50px;
-    top: 0;
-    left: 0;
     cursor: pointer;
     display: none;
+}
+
+.power-button-icon{
+    width: 25px;
+    cursor: pointer;
+}
+
+.power-btn-content{
+    position: absolute;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    top: 70px;
+    right: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: none;
+}
+
+.power-btn-content button{
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+.power-btn-content button:first-of-type{
+    margin-bottom: 10px;
+}
+
+.dashboard-sub-menus{
+    display: flex;
+    gap: 17px;
+    flex-wrap: wrap;
+}
+
+.dashboard-sub-menu{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 24%;
+    color: #fff;
+    height: 120px;
+}
+
+.dashboard-sub-menu.staffs{
+    background-color: #7460E8;
+}
+
+.dashboard-sub-menu.students{
+    background-color: #24C7DB;
+}
+
+.dashboard-sub-menu.subjects{
+    background-color: #FD4A6D;
+}
+
+.dashboard-sub-menu.sessions{
+    background-color: #FFB100;
+}
+
+.dashboard-sub-menu-icon{
+   width: 50px;
+}
+
+.dashboard-report-summary{
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.dashboard-report-summary-header{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-report-summary-header-icon{
+    width: 20px;
 }
