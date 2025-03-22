@@ -16,13 +16,43 @@
                     <img src="/school_management/static/images/hamburger-menu.svg" class="sidebar-close-btn"/>
 
                     <div class="dashboard-left-menus mt-5">
-                        <button class="dashboard-menu"><img src="/school_management/static/images/dashboard-menu-icon.svg"/> Dashboard</button>
+                        <button class="dashboard-menu menu-item" data-tab="1" data-has-sub-menus="0">
+                            <img src="/school_management/static/images/dashboard-menu-icon.svg"/>
+                            Dashboard
+                        </button>
+                        <button class="configuration-menu menu-item" data-tab="2" data-has-sub-menus="1">
+                            <img src="/school_management/static/images/configuration-menu-icon.svg"/>
+                            Configuration
+                        </button>
+
+                        <div class="configuration-menu-sub-menus sub-menus" id="sub-menus-2">
+                            <button class="configuration-general-menu menu-item sub-menu-item" data-tab="21"
+                                    data-has-sub-menus="0">
+                                <img src="/school_management/static/images/general-configuration-menu-icon.svg"/>
+                                General
+                            </button>
+                            <button class="configuration-session-menu menu-item sub-menu-item" data-tab="22"
+                                    data-has-sub-menus="0">
+                                <img src="/school_management/static/images/session-configuration-menu-icon.svg"/>
+                                Session
+                            </button>
+                            <button class="configuration-subject-menu menu-item sub-menu-item" data-tab="23"
+                                    data-has-sub-menus="0">
+                                <img src="/school_management/static/images/subject-configuration-menu-icon.svg"/>
+                                Subject
+                            </button>
+                            <button class="configuration-fee-menu menu-item sub-menu-item" data-tab="24"
+                                    data-has-sub-menus="0">
+                                <img src="/school_management/static/images/fee-configuration-menu-icon.svg"/>
+                                Fee
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="dashboard-right">
                     <div class="dashboard-right-header">
                         <img src="/school_management/static/images/hamburger-menu-close.svg" class="sidebar-open-btn"/>
-                        <div class="placeholder-button"></div>
+                        <h6 class="dashboard-right-header-welcome text-light">Welcome to WDTILSM!!!</h6>
                         <img src="/school_management/static/images/power-button-icon.svg" class="power-button-icon"/>
                     </div>
 
@@ -31,10 +61,11 @@
                         <button>Logout</button>
                     </div>
 
-                    <div class="dashboard-menu-content mt-3">
+                    <div class="dashboard-menu-content menu-content mt-3" id="menu-content-1">
                         <div class="dashboard-sub-menus">
                             <div class="dashboard-sub-menu staffs">
-                                <img src="/school_management/static/images/hamburger-menu-close.svg" class="dashboard-sub-menu-icon"/>
+                                <img src="/school_management/static/images/hamburger-menu-close.svg"
+                                     class="dashboard-sub-menu-icon"/>
                                 <div>
                                     <h5 class="mb-2">STAFFS</h5>
                                     <h6>26</h6>
@@ -42,7 +73,8 @@
                             </div>
 
                             <div class="dashboard-sub-menu students">
-                                <img src="/school_management/static/images/hamburger-menu-close.svg" class="dashboard-sub-menu-icon"/>
+                                <img src="/school_management/static/images/hamburger-menu-close.svg"
+                                     class="dashboard-sub-menu-icon"/>
                                 <div>
                                     <h5 class="mb-2">STUDENTS</h5>
                                     <h6>270</h6>
@@ -50,7 +82,8 @@
                             </div>
 
                             <div class="dashboard-sub-menu subjects">
-                                <img src="/school_management/static/images/hamburger-menu-close.svg" class="dashboard-sub-menu-icon"/>
+                                <img src="/school_management/static/images/hamburger-menu-close.svg"
+                                     class="dashboard-sub-menu-icon"/>
                                 <div>
                                     <h5 class="mb-2">SUBJECTS</h5>
                                     <h6>18</h6>
@@ -58,7 +91,8 @@
                             </div>
 
                             <div class="dashboard-sub-menu sessions">
-                                <img src="/school_management/static/images/hamburger-menu-close.svg" class="dashboard-sub-menu-icon"/>
+                                <img src="/school_management/static/images/hamburger-menu-close.svg"
+                                     class="dashboard-sub-menu-icon"/>
                                 <div>
                                     <h5 class="mb-2">SESSIONS</h5>
                                     <h6>10</h6>
@@ -68,14 +102,164 @@
 
                         <div class="dashboard-report-summary mt-3 p-2">
                             <div class="dashboard-report-summary-header mb-4">
-                                <img src="/school_management/static/images/subject-icon.svg" class="dashboard-report-summary-header-icon"/>
+                                <img src="/school_management/static/images/subject-icon.svg"
+                                     class="dashboard-report-summary-header-icon"/>
                                 <h6 class="text-center">Subject Report Summary</h6>
                             </div>
 
                             <div class="dashboard-report-summary-filters">
-                                
+
                             </div>
                         </div>
+                    </div>
+
+                    <div class="configuration-menu-content general-configuration-menu-content menu-content mt-3"
+                         id="menu-content-21">
+                        <div class="general-configuration-menu-content-header mt-3">
+                            <p class="text-muted">Configuration/General</p>
+                        </div>
+
+                        <div class="general-configuration-menu-content-body mt-3">
+                            <p class="mb-1">School name</p>
+                            <input type="text" class="general-configuration-menu-content-input mb-3"/>
+
+                            <p class="mb-1">School slogan</p>
+                            <input type="text" class="general-configuration-menu-content-input mb-3"/>
+
+                            <p class="mb-1">School address</p>
+                            <textarea rows="4" class="general-configuration-menu-content-input mb-3"/>
+
+                            <p class="mb-1">Principal signature (.png/.jpg/.jpeg/.webp)</p>
+                            <input type="file" class="general-configuration-menu-content-input"
+                                   accept=".png, .jpg, .jpeg, .webp"/>
+
+                            <br/>
+
+                            <button class="update-settings-btn mt-4">Update settings</button>
+                        </div>
+                    </div>
+
+                    <div class="configuration-menu-content session-configuration-menu-content menu-content mt-3"
+                         id="menu-content-22">
+                        <div class="session-configuration-menu-content-header mt-3">
+                            <p class="text-muted">Configuration/Session</p>
+                        </div>
+
+                        <div class="session-configuration-menu-content-sub-header mt-3">
+                            <h5>Academic session setup</h5>
+                        </div>
+
+                        <div class="session-configuration-menu-content-body mt-3">
+                            <div class="session-configuration-menu-content-body-tabs">
+                                <button class="session-configuration-tab active-session-conf-tab session-configuration-tab-1"
+                                        data-tab="1"><i class="fa-solid fa-plus"/> Add new session
+                                </button>
+                                <button class="session-configuration-tab" data-tab="2">All academic sessions</button>
+                            </div>
+
+                            <div class="session-configuration-tab-content session-conf-new-ac-y-cnt"
+                                 id="session-configuration-tab-content-1">
+                                <p class="mb-1">Session</p>
+                                <input type="text" class="session-configuration-menu-content-input mb-3"
+                                       placeholder="2024-2025"/>
+
+                                <p class="mb-1">Term</p>
+                                <select class="session-configuration-menu-content-input mb-3">
+                                    <option value="first">First</option>
+                                    <option value="second">Second</option>
+                                    <option value="final">Final</option>
+                                </select>
+
+                                <br/>
+
+                                <button class="save-session-settings-btn mt-3">Save setup</button>
+                            </div>
+
+                            <div class="session-configuration-tab-content session-conf-all-ac-y-cnt"
+                                 id="session-configuration-tab-content-2">
+                                <div class="all-session-search-container">
+                                    <input type="text" class="all-session-search-input" placeholder="Search..."/>
+                                    <button class="all-session-search-btn">Search</button>
+                                </div>
+
+                                <div class="all-session-table mt-3">
+                                    <table>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Session</th>
+                                            <th>Term</th>
+                                            <th>Active</th>
+                                            <th>Action</th>
+                                        </tr>
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2024-2025</td>
+                                            <td>First</td>
+                                            <td>Yes</td>
+                                            <td class="session-action-buttons">
+                                                <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"/></button>
+                                                <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"/></button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>2</td>
+                                            <td>2023-2024</td>
+                                            <td>Second</td>
+                                            <td>No</td>
+                                            <td class="session-action-buttons">
+                                                <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"/></button>
+                                                <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"/></button>
+                                            </td>
+                                        </tr>
+
+                                         <tr>
+                                            <td>3</td>
+                                            <td>2023-2024</td>
+                                            <td>Second</td>
+                                            <td>No</td>
+                                            <td class="session-action-buttons">
+                                                <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"/></button>
+                                                <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"/></button>
+                                            </td>
+                                        </tr>
+
+                                         <tr>
+                                            <td>4</td>
+                                            <td>2023-2024</td>
+                                            <td>Second</td>
+                                            <td>No</td>
+                                            <td class="session-action-buttons">
+                                                <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"/></button>
+                                                <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"/></button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>5</td>
+                                            <td>2023-2024</td>
+                                            <td>Second</td>
+                                            <td>No</td>
+                                            <td class="session-action-buttons">
+                                                <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"/></button>
+                                                <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"/></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="configuration-menu-content subject-configuration-menu-content menu-content mt-3"
+                         id="menu-content-23">
+                        Subject
+                    </div>
+
+                    <div class="configuration-menu-content fee-configuration-menu-content menu-content mt-3"
+                         id="menu-content-24">
+                        Fee
                     </div>
 
                 </div>

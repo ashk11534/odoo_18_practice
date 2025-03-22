@@ -4,8 +4,9 @@
     'summary': '''School management system.''',
     'depends': [],
     'data': [
+        'security/ir.model.access.csv',
         'views/views.xml',
-        'menus/menu_items.xml',
+        'views/menu_items.xml',
 
         # templates
         'templates/dashboard.xml',

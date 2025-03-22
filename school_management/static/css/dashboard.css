@@ -1,3 +1,5 @@
+/* Dashboard global (Start) */
+
 body{
     background-color: #fff;
 }
@@ -17,30 +19,11 @@ body{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     height: 100vh;
+    overflow-y: auto;
 }
 
-.dashboard-menu{
-    width: 100%;
-    background-color: transparent;
-    color: #fff;
-    font-size: 14px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding: 5px 10px;
-    border-radius: 7px;
-    border: none;
-    outline: none;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    transition: all 0.3s;
-}
-
-.dashboard-menu img{
-    width: 20px;
-}
-
-.dashboard-menu:hover{
-    scale: 1.05;
+.menu-item:not(:last-of-type){
+    margin-bottom: 10px;
 }
 
 .dashboard-right{
@@ -51,13 +34,14 @@ body{
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     height: 100vh;
+    overflow-y: auto;
 }
 
 .dashboard-right-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #0170BA;
+    background-color: #2f3542;
     height: 50px;
     padding: 0 20px;
     border-radius: 10px;
@@ -124,10 +108,70 @@ body{
     margin-bottom: 10px;
 }
 
+/* Dashboard global (End) */
+
+/* All menus (Start) */
+
+.dashboard-menu, .configuration-menu,
+.configuration-general-menu,
+.configuration-session-menu,
+.configuration-subject-menu,
+.configuration-fee-menu{
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    transition: all 0.3s;
+}
+
+.dashboard-menu img, .configuration-menu img{
+    width: 20px;
+}
+
+.dashboard-menu:hover,
+.configuration-menu:hover,
+.configuration-general-menu:hover,
+.configuration-session-menu:hover,
+.configuration-subject-menu:hover,
+.configuration-fee-menu:hover{
+    scale: 1.05;
+}
+
+.sub-menus{
+    display: none;
+}
+
+.configuration-general-menu,
+.configuration-session-menu,
+.configuration-subject-menu,
+.configuration-fee-menu{
+    font-size: 13px;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+.configuration-general-menu img,
+.configuration-session-menu img,
+.configuration-subject-menu img,
+.configuration-fee-menu img{
+    width: 15px;
+}
+
+/* All menus (End) */
+
+/*  Dashboard menu content (Start) */
+
 .dashboard-sub-menus{
     display: flex;
     gap: 17px;
-    flex-wrap: wrap;
 }
 
 .dashboard-sub-menu{
@@ -176,3 +220,173 @@ body{
 .dashboard-report-summary-header-icon{
     width: 20px;
 }
+
+/*  Dashboard menu content (End) */
+
+/* Configuration menu content (Start) */
+
+.configuration-menu-content{
+    display: none;
+}
+
+/*  General (Start) */
+
+.general-configuration-menu-content-header{
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.general-configuration-menu-content-body{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.general-configuration-menu-content-input{
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.update-settings-btn{
+    border: none;
+    outline: none !important;
+    padding: 5px 15px;
+    background-color: #0170BA;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/*  General (End) */
+
+/* Session (Start) */
+
+.session-configuration-menu-content-header{
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.session-configuration-menu-content-body-tabs{
+    display: flex;
+    align-items: center;
+    background-color: #ddd;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.session-configuration-tab{
+    border: none;
+    outline: none;
+    padding: 7px 10px;
+    font-size: 13px;
+    background-color: transparent;
+}
+
+.session-configuration-tab-1{
+    border-top-left-radius: 5px;
+}
+
+.session-configuration-tab-content{
+    padding: 15px 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #fff;
+}
+
+.session-conf-all-ac-y-cnt{
+    display: none;
+}
+
+.active-session-conf-tab{
+    background-color: #fff;
+    border-top: 2px solid #0170BA;
+}
+
+.session-configuration-menu-content-input{
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.save-session-settings-btn{
+    border: none;
+    outline: none !important;
+    padding: 5px 15px;
+    background-color: #0170BA;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.all-session-search-container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+.all-session-search-input{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.all-session-search-btn{
+    border: none;
+    outline: none !important;
+    padding: 5px 15px;
+    background-color: #0170BA;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.all-session-table table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+
+.all-session-table table td, .all-session-table table th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.all-session-table table tr:nth-child(even) {
+  background-color: #dddddd7d;
+}
+
+.session-action-buttons{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.session-action-btn{
+    font-size: 12px;
+    padding: 8px 12px;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* Session (End) */
+
+/* Configuration menu content (End) */
+

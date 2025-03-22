@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <menuitem id="school_management_root_menu" name="School Management" sequence="-100" >
+        <menuitem id="sm_academic_session_menu" name="Academic sessions" sequence="0" action="sm_academic_session_action"/>
+    </menuitem>
+</odoo>
