@@ -5,6 +5,7 @@ class AcademicSession(models.Model):
     _name = 'sm.academic.session'
     _description = 'School management academic session'
     _rec_name = 'sm_ac_session'
+    _order = 'id desc'
 
     sm_ac_session = fields.Char(string='Session', required=True)
     term = fields.Selection([
@@ -12,3 +13,4 @@ class AcademicSession(models.Model):
         ('second', 'Second'),
         ('final', 'Final'),
     ], string='Term', required=True)
+    active = fields.Boolean(default=True, string='Active')

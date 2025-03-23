@@ -8,6 +8,20 @@
                 <link rel="stylesheet" href="/school_management/static/css/dashboard.css"/>
             </t>
 
+            <div class="screen-loader-overlay-container">
+                <div class="screen-loader-overlay">
+                    <img src="/school_management/static/images/bouncing-loader.svg" class="screen-loader-svg-icon"/>
+                </div>
+            </div>
+
+            <div class="record-created-successfully">
+                <div class="alert alert-success">Created successfully!</div>
+            </div>
+
+            <div class="record-creation-failed">
+                <div class="alert alert-danger">The academic session already exists!</div>
+            </div>
+
             <div class="main-content">
                 <div class="dashboard-left">
                     <div class="company-logo-container">
@@ -160,15 +174,22 @@
                             <div class="session-configuration-tab-content session-conf-new-ac-y-cnt"
                                  id="session-configuration-tab-content-1">
                                 <p class="mb-1">Session</p>
-                                <input type="text" class="session-configuration-menu-content-input mb-3"
+                                <input type="text" class="session-configuration-menu-content-input mb-3" id="academic-session-input-id"
                                        placeholder="2024-2025"/>
 
+                                <p class="alert alert-danger required-field-ac-session mb-3" id="academic-session-input-req-field">This is a required field.</p>
+
+                                <p class="alert alert-danger required-field-ac-session mb-3" id="academic-session-invalid-req-field">Invalid session.</p>
+
                                 <p class="mb-1">Term</p>
-                                <select class="session-configuration-menu-content-input mb-3">
+                                <select class="session-configuration-menu-content-input mb-3" id="academic-term-input-id">
+                                    <option value="">Select</option>
                                     <option value="first">First</option>
                                     <option value="second">Second</option>
                                     <option value="final">Final</option>
                                 </select>
+
+                                <p class="alert alert-danger required-field-ac-session" id="academic-term-input-req-field">This is a required field.</p>
 
                                 <br/>
 
@@ -190,61 +211,6 @@
                                             <th>Term</th>
                                             <th>Active</th>
                                             <th>Action</th>
-                                        </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>2024-2025</td>
-                                            <td>First</td>
-                                            <td>Yes</td>
-                                            <td class="session-action-buttons">
-                                                <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"/></button>
-                                                <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"/></button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>2</td>
-                                            <td>2023-2024</td>
-                                            <td>Second</td>
-                                            <td>No</td>
-                                            <td class="session-action-buttons">
-                                                <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"/></button>
-                                                <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"/></button>
-                                            </td>
-                                        </tr>
-
-                                         <tr>
-                                            <td>3</td>
-                                            <td>2023-2024</td>
-                                            <td>Second</td>
-                                            <td>No</td>
-                                            <td class="session-action-buttons">
-                                                <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"/></button>
-                                                <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"/></button>
-                                            </td>
-                                        </tr>
-
-                                         <tr>
-                                            <td>4</td>
-                                            <td>2023-2024</td>
-                                            <td>Second</td>
-                                            <td>No</td>
-                                            <td class="session-action-buttons">
-                                                <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"/></button>
-                                                <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"/></button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>5</td>
-                                            <td>2023-2024</td>
-                                            <td>Second</td>
-                                            <td>No</td>
-                                            <td class="session-action-buttons">
-                                                <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"/></button>
-                                                <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"/></button>
-                                            </td>
                                         </tr>
                                     </table>
                                 </div>

@@ -4,6 +4,37 @@ body{
     background-color: #fff;
 }
 
+.screen-loader-overlay-container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+    display: none;
+}
+
+.record-created-successfully, .record-creation-failed{
+    bottom: 10px;
+    right: 20px;
+    position: fixed;
+    z-index: 100;
+    display: none;
+}
+
+.screen-loader-overlay{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.screen-loader-svg-icon{
+    width: 100px;
+}
+
 .main-content{
     display: flex;
     margin-top: 10px;
@@ -387,6 +418,12 @@ body{
 }
 
 /* Session (End) */
+
+.required-field-ac-session{
+    width: 50%;
+    padding: 5px 10px;
+    display: none;
+}
 
 /* Configuration menu content (End) */
 

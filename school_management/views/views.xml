@@ -8,6 +8,7 @@
             <list>
                 <field name="sm_ac_session"/>
                 <field name="term"/>
+                <field name="active"/>
             </list>
         </field>
     </record>
@@ -22,6 +23,7 @@
                         <group>
                             <field name="sm_ac_session"/>
                             <field name="term"/>
+                            <field name="active"/>
                         </group>
                     </group>
                 </sheet>
