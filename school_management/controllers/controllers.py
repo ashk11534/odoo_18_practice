@@ -15,9 +15,7 @@ class BaseController(http.Controller):
 
 
     @http.route('/academic-sessions', methods=['POST', 'GET'], type='http', auth='user', csrf=False)
-    def create_new_session(self, **kwargs):
-
-        print(req.httprequest.method)
+    def create_and_get_sessions(self, **kwargs):
 
         if req.httprequest.method == 'POST':
 
@@ -53,4 +51,20 @@ class BaseController(http.Controller):
                 })
 
             return json.dumps({'status': 'OK', 'code': 200, 'academic_sessions': all_academic_sessions_list})
+
+
+    @http.route('/academic-sessions/<int:record_id>', methods=['GET', 'DELETE'], type='http', auth='user', csrf=False)
+    def get_or_delete_academic_session(self, record_id):
+
+        if req.httprequest.method == 'DELETE':
+            record_id = int(record_id) if record_id else None
+            academic_session_obj = req.env['sm.academic.session'].sudo().search([('id', '=', record_id)])
+
+            is_deleted = academic_session_obj.unlink()
+
+            if is_deleted:
+                return json.dumps({'status': 'OK', 'code': 201, 'id': record_id})
+
+            else:
+                return json.dumps({'status': 'Not Found', 'code': 400, 'id': None})
 

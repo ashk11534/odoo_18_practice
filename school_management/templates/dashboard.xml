@@ -8,9 +8,31 @@
                 <link rel="stylesheet" href="/school_management/static/css/dashboard.css"/>
             </t>
 
+            <!-- Modals and confirmations (start)-->
+
             <div class="screen-loader-overlay-container">
                 <div class="screen-loader-overlay">
                     <img src="/school_management/static/images/bouncing-loader.svg" class="screen-loader-svg-icon"/>
+                </div>
+            </div>
+
+            <div class="delete-record-overlay-container">
+                <div class="delete-record-overlay">
+                    <div class="delete-record-overlay-content">
+                        <h6>Do you really want to delete this record?</h6>
+                        <div class="delete-record-overlay-actions mt-3">
+                            <button class="delete-record-overlay-action-cancel-btn delete-record-overlay-action-btn">Cancel</button>
+                            <button class="delete-record-overlay-action-confirm-btn delete-record-overlay-action-btn" data-record-id="">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="update-academic-session-overlay-container">
+                <div class="update-academic-session-overlay">
+                    <div class="update-academic-session-modal">
+                       Update session
+                    </div>
                 </div>
             </div>
 
@@ -21,6 +43,16 @@
             <div class="record-creation-failed">
                 <div class="alert alert-danger">The academic session already exists!</div>
             </div>
+
+            <div class="record-deleted-successfully">
+                <div class="alert alert-success">Deleted successfully!</div>
+            </div>
+
+            <div class="record-deletion-failed">
+                <div class="alert alert-danger">Record deletion failed!</div>
+            </div>
+
+            <!-- Modals and confirmations (end)-->
 
             <div class="main-content">
                 <div class="dashboard-left">
@@ -166,30 +198,40 @@
                         <div class="session-configuration-menu-content-body mt-3">
                             <div class="session-configuration-menu-content-body-tabs">
                                 <button class="session-configuration-tab active-session-conf-tab session-configuration-tab-1"
-                                        data-tab="1"><i class="fa-solid fa-plus"/> Add new session
+                                        data-tab="1">
+                                    <i class="fa-solid fa-plus"/>
+                                    Add new session
                                 </button>
-                                <button class="session-configuration-tab" data-tab="2">All academic sessions</button>
+                                <button class="session-configuration-tab session-configuration-tab-2" data-tab="2">All academic sessions</button>
                             </div>
 
                             <div class="session-configuration-tab-content session-conf-new-ac-y-cnt"
                                  id="session-configuration-tab-content-1">
                                 <p class="mb-1">Session</p>
-                                <input type="text" class="session-configuration-menu-content-input mb-3" id="academic-session-input-id"
+                                <input type="text" class="session-configuration-menu-content-input mb-3"
+                                       id="academic-session-input-id"
                                        placeholder="2024-2025"/>
 
-                                <p class="alert alert-danger required-field-ac-session mb-3" id="academic-session-input-req-field">This is a required field.</p>
+                                <p class="alert alert-danger required-field-ac-session mb-3"
+                                   id="academic-session-input-req-field">This is a required field.
+                                </p>
 
-                                <p class="alert alert-danger required-field-ac-session mb-3" id="academic-session-invalid-req-field">Invalid session.</p>
+                                <p class="alert alert-danger required-field-ac-session mb-3"
+                                   id="academic-session-invalid-req-field">Invalid session.
+                                </p>
 
                                 <p class="mb-1">Term</p>
-                                <select class="session-configuration-menu-content-input mb-3" id="academic-term-input-id">
+                                <select class="session-configuration-menu-content-input mb-3"
+                                        id="academic-term-input-id">
                                     <option value="">Select</option>
                                     <option value="first">First</option>
                                     <option value="second">Second</option>
                                     <option value="final">Final</option>
                                 </select>
 
-                                <p class="alert alert-danger required-field-ac-session" id="academic-term-input-req-field">This is a required field.</p>
+                                <p class="alert alert-danger required-field-ac-session"
+                                   id="academic-term-input-req-field">This is a required field.
+                                </p>
 
                                 <br/>
 
@@ -204,14 +246,14 @@
                                 </div>
 
                                 <div class="all-session-table mt-3">
+
                                     <table>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Session</th>
-                                            <th>Term</th>
-                                            <th>Active</th>
-                                            <th>Action</th>
-                                        </tr>
+                                        <div class="all-academic-sessions-loader-container">
+                                            <div class="all-academic-sessions-loader">
+                                                <img src="/school_management/static/images/bouncing-loader.svg"
+                                                     class="screen-loader-svg-icon"/>
+                                            </div>
+                                        </div>
                                     </table>
                                 </div>
                             </div>

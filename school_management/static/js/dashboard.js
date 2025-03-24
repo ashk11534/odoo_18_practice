@@ -68,7 +68,11 @@ $(document).ready(function(){
 
         $('.session-configuration-tab-content').hide();
 
+        // Retrieving all academic sessions (start)
+
         if(tabId === 2){
+            $('.all-academic-sessions-loader-container').fadeIn('slow');
+
             $.get('/academic-sessions', {}, function(response){
 
                 const res = JSON.parse(response);
@@ -84,8 +88,8 @@ $(document).ready(function(){
                                 <td>${_session.academic_term}</td>
                                 <td>${_session.active ? 'Yes' : 'No'}</td>
                                 <td class="session-action-buttons">
-                                    <button class="session-action-btn bg-dark"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="session-action-btn bg-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                    <button class="session-action-btn bg-dark session-action-btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="session-action-btn bg-danger session-action-btn-delete" data-record-id=${_session.id}><i class="fa-solid fa-trash-can"></i></button>
                                 </td>
                             </tr>`
                 })
@@ -106,6 +110,10 @@ $(document).ready(function(){
         }
 
         $(`#session-configuration-tab-content-${tabId}`).fadeIn('slow');
+
+        $('.all-academic-sessions-loader-container').fadeOut('slow');
+
+        // Retrieving all academic sessions (end)
     })
 
     // Handling session menu tabs & tab content (end)
@@ -186,7 +194,7 @@ $(document).ready(function(){
 
                             $('.record-created-successfully').fadeOut('slow');
 
-                        }, 2000);
+                        }, 3000);
 
                     }
 
@@ -202,7 +210,7 @@ $(document).ready(function(){
 
                         $('.record-creation-failed').fadeOut('slow');
 
-                    }, 2000);
+                    }, 3000);
 
                 });
             }
@@ -211,10 +219,68 @@ $(document).ready(function(){
 
     // Creating new academic session (end)
 
-    // Retrieving all academic sessions (start)
+    // Deleting academic session (start)
 
+    $(document).on('click', '.session-action-btn-delete', function(){
+        const recordId = $(this).data('record-id');
 
+        $('.delete-record-overlay-action-confirm-btn').data('record-id', recordId);
 
-    // Retrieving all academic sessions (end)
+        $('.delete-record-overlay-container').fadeIn('slow');
+    })
+
+    $('.delete-record-overlay-action-cancel-btn ').click(function(){
+        $('.delete-record-overlay-container').fadeOut('slow');
+    })
+
+    $('.delete-record-overlay-action-confirm-btn').click(function(){
+
+        $('.all-academic-sessions-loader-container').fadeIn('slow');
+
+        const recordId = $(this).data('record-id');
+
+        $.ajax({
+            url: `/academic-sessions/${recordId}`,
+            type: 'DELETE',
+            success: function(response){
+                const res = JSON.parse(response);
+
+                if(res.code === 201){
+                    $('.delete-record-overlay-container').fadeOut('slow');
+
+                    $('.all-academic-sessions-loader-container').fadeOut('slow', function(){
+                        $('.record-deleted-successfully').fadeIn('slow');
+
+                        setTimeout(function(){
+
+                            $('.record-deleted-successfully').fadeOut('slow');
+
+                        }, 3000);
+                    });
+
+                    $('.session-configuration-tab-2').trigger('click');
+                }
+
+                if(res.code === 400){
+                    $('.delete-record-overlay-container').fadeOut('slow');
+
+                    $('.all-academic-sessions-loader-container').fadeOut('slow', function(){
+                        $('.record-deletion-failed').fadeIn('slow');
+
+                        setTimeout(function(){
+
+                            $('.record-deletion-failed').fadeOut('slow');
+
+                        }, 3000);
+                    });
+
+                    $('.session-configuration-tab-2').trigger('click');
+                }
+            },
+            error: function(xhr, status, error){}
+        })
+    })
+
+    // Deleting academic session (end)
 
 })
