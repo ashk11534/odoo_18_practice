@@ -13,4 +13,4 @@ class AcademicSession(models.Model):
         ('second', 'Second'),
         ('final', 'Final'),
     ], string='Term', required=True)
-    active = fields.Boolean(default=True, string='Active')
+    is_active = fields.Boolean(default=True, string='Active')

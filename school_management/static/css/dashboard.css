@@ -89,7 +89,23 @@ body{
     border-radius: 5px;
 }
 
-.delete-record-overlay-action-btn{
+.update-academic-session-actions{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.update-academic-session-active-label{
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+#update-academic-session-active-id:focus{
+    border-color: none !important;
+    box-shadow: none;
+}
+
+.delete-record-overlay-action-btn, .update-academic-session-action-btn{
     padding: 7px 12px;
     border-radius: 5px;
     border: none;
@@ -99,11 +115,11 @@ body{
     font-weight: bold;
 }
 
-.delete-record-overlay-action-cancel-btn{
+.delete-record-overlay-action-cancel-btn, .update-academic-session-cancel-btn{
     background-color: red;
 }
 
-.delete-record-overlay-action-confirm-btn{
+.delete-record-overlay-action-confirm-btn, .update-academic-session-update-btn{
     background-color: #0170BA;
 }
 
@@ -412,13 +428,17 @@ body{
     border-top: 2px solid #0170BA;
 }
 
-.session-configuration-menu-content-input{
+.session-configuration-menu-content-input, .update-academic-session-input{
     width: 50%;
     border: 1px solid #ddd;
     border-radius: 5px;
     outline: none;
     padding: 5px 10px;
     font-size: 14px;
+}
+
+.update-academic-session-input{
+    width: 100%;
 }
 
 .save-session-settings-btn{

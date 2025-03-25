@@ -47,7 +47,7 @@ class BaseController(http.Controller):
                     'id': _session.id,
                     'academic_session': _session.sm_ac_session,
                     'academic_term': _session.term,
-                    'active': _session.active
+                    'active': _session.is_active
                 })
 
             return json.dumps({'status': 'OK', 'code': 200, 'academic_sessions': all_academic_sessions_list})

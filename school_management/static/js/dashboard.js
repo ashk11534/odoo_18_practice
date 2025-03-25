@@ -84,11 +84,11 @@ $(document).ready(function(){
                 const academicSessionsTRArray = academicSessions.map((_session, index) => {
                     return `<tr>
                                 <td>${index + 1}</td>
-                                <td>${_session.academic_session}</td>
-                                <td>${_session.academic_term}</td>
-                                <td>${_session.active ? 'Yes' : 'No'}</td>
+                                <td id="academic-session-current-val-${_session.id}">${_session.academic_session}</td>
+                                <td id="academic-term-current-val-${_session.id}">${_session.academic_term}</td>
+                                <td id="academic-session-current-active-${_session.id}">${_session.active ? 'Yes' : 'No'}</td>
                                 <td class="session-action-buttons">
-                                    <button class="session-action-btn bg-dark session-action-btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="session-action-btn bg-dark session-action-btn-edit" data-record-id=${_session.id}><i class="fa-solid fa-pen"></i></button>
                                     <button class="session-action-btn bg-danger session-action-btn-delete" data-record-id=${_session.id}><i class="fa-solid fa-trash-can"></i></button>
                                 </td>
                             </tr>`
@@ -282,5 +282,36 @@ $(document).ready(function(){
     })
 
     // Deleting academic session (end)
+
+    // Editing academic session (start)
+
+    $(document).on('click', '.session-action-btn-edit', function(){
+        $('.update-academic-session-update-btn').data('record-id', '');
+        $('#update-academic-session-input-id').val('');
+        $('#update-academic-term-input-id').val('');
+        $('#update-academic-session-active-id').removeAttr('checked');
+
+        const recordId = $(this).data('record-id');
+
+        const currentAcademicSessionVal = $(`#academic-session-current-val-${recordId}`).text();
+        const currentAcademicTermVal = $(`#academic-term-current-val-${recordId}`).text();
+        const currentAcademicActiveStatus = $(`#academic-session-current-active-${recordId}`).text();
+
+        $('.update-academic-session-update-btn').data('record-id', recordId);
+        $('#update-academic-session-input-id').val(currentAcademicSessionVal);
+        $('#update-academic-term-input-id').val(currentAcademicTermVal);
+
+        if(currentAcademicActiveStatus === 'Yes'){
+            $('#update-academic-session-active-id').attr('checked', 'true');
+        }
+
+        $('.update-academic-session-overlay-container').fadeIn('slow');
+    })
+
+    $('.update-academic-session-cancel-btn').click(function(){
+        $('.update-academic-session-overlay-container').fadeOut('slow');
+    })
+
+    // Editing academic session (end)
 
 })

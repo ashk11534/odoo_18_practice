@@ -21,8 +21,12 @@
                     <div class="delete-record-overlay-content">
                         <h6>Do you really want to delete this record?</h6>
                         <div class="delete-record-overlay-actions mt-3">
-                            <button class="delete-record-overlay-action-cancel-btn delete-record-overlay-action-btn">Cancel</button>
-                            <button class="delete-record-overlay-action-confirm-btn delete-record-overlay-action-btn" data-record-id="">Confirm</button>
+                            <button class="delete-record-overlay-action-cancel-btn delete-record-overlay-action-btn">
+                                Cancel
+                            </button>
+                            <button class="delete-record-overlay-action-confirm-btn delete-record-overlay-action-btn"
+                                    data-record-id="">Confirm
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -31,7 +35,32 @@
             <div class="update-academic-session-overlay-container">
                 <div class="update-academic-session-overlay">
                     <div class="update-academic-session-modal">
-                       Update session
+                        <p class="mb-1">Session</p>
+                        <input type="text" class="update-academic-session-input mb-3"
+                               id="update-academic-session-input-id"/>
+
+                        <p class="mb-1">Term</p>
+                        <select class="update-academic-session-input mb-3"
+                                id="update-academic-term-input-id">
+                            <option value="">Select</option>
+                            <option value="first">First</option>
+                            <option value="second">Second</option>
+                            <option value="final">Final</option>
+                        </select>
+
+                        <div class="form-check form-switch mb-3">
+                            <label class="form-check-label update-academic-session-active-label" for="update-academic-session-active-id">Active</label>
+                            <input class="form-check-input" type="checkbox" id="update-academic-session-active-id"/>
+                        </div>
+
+                        <div class="update-academic-session-actions mt-3">
+                            <button class="update-academic-session-cancel-btn update-academic-session-action-btn">
+                                Cancel
+                            </button>
+                            <button class="update-academic-session-update-btn update-academic-session-action-btn"
+                                    data-record-id="">Update
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -202,7 +231,9 @@
                                     <i class="fa-solid fa-plus"/>
                                     Add new session
                                 </button>
-                                <button class="session-configuration-tab session-configuration-tab-2" data-tab="2">All academic sessions</button>
+                                <button class="session-configuration-tab session-configuration-tab-2" data-tab="2">All
+                                    academic sessions
+                                </button>
                             </div>
 
                             <div class="session-configuration-tab-content session-conf-new-ac-y-cnt"
