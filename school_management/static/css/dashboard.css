@@ -23,7 +23,7 @@ body{
    align-items: center;
 }
 
-.record-created-successfully, .record-creation-failed, .record-deleted-successfully, .record-deletion-failed{
+.record-created-successfully, .record-creation-failed, .record-deleted-successfully, .record-deletion-failed, .record-updated-successfully, .record-update-failed{
     bottom: 10px;
     right: 20px;
     position: fixed;

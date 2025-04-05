@@ -53,8 +53,28 @@ class BaseController(http.Controller):
             return json.dumps({'status': 'OK', 'code': 200, 'academic_sessions': all_academic_sessions_list})
 
 
-    @http.route('/academic-sessions/<int:record_id>', methods=['GET', 'DELETE'], type='http', auth='user', csrf=False)
-    def get_or_delete_academic_session(self, record_id):
+    @http.route('/academic-sessions/<int:record_id>', methods=['GET', 'PUT', 'DELETE'], type='http', auth='user', csrf=False)
+    def get_update_or_delete_academic_session(self, record_id, **kwargs):
+
+        if req.httprequest.method == 'PUT':
+            record_id = int(kwargs.get('recordId')) if kwargs.get('recordId') else None
+            academic_session = kwargs.get('academicSession')
+            academic_term = kwargs.get('academicTerm')
+            is_active = kwargs.get('active')
+
+            academic_session_obj = req.env['sm.academic.session'].sudo().search([('id', '=', record_id)])
+
+            is_updated = academic_session_obj.sudo().write({
+                'sm_ac_session': academic_session,
+                'term': academic_term,
+                'is_active': True if is_active == 'true' else False
+            })
+
+            if is_updated:
+                return json.dumps({'status': 'OK', 'code': 201, 'id': record_id})
+
+            else:
+                return json.dumps({'status': 'Not Found', 'code': 400, 'id': None})
 
         if req.httprequest.method == 'DELETE':
             record_id = int(record_id) if record_id else None

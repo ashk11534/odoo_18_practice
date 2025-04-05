@@ -48,10 +48,7 @@
                             <option value="final">Final</option>
                         </select>
 
-                        <div class="form-check form-switch mb-3">
-                            <label class="form-check-label update-academic-session-active-label" for="update-academic-session-active-id">Active</label>
-                            <input class="form-check-input" type="checkbox" id="update-academic-session-active-id"/>
-                        </div>
+                        <div class="form-check form-switch mb-3 update-academic-session-active-placeholder"/>
 
                         <div class="update-academic-session-actions mt-3">
                             <button class="update-academic-session-cancel-btn update-academic-session-action-btn">
@@ -79,6 +76,14 @@
 
             <div class="record-deletion-failed">
                 <div class="alert alert-danger">Record deletion failed!</div>
+            </div>
+
+            <div class="record-updated-successfully">
+                <div class="alert alert-success">Updated successfully!</div>
+            </div>
+
+            <div class="record-update-failed">
+                <div class="alert alert-danger">Update failed!</div>
             </div>
 
             <!-- Modals and confirmations (end)-->

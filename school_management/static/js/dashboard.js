@@ -258,7 +258,6 @@ $(document).ready(function(){
                         }, 3000);
                     });
 
-                    $('.session-configuration-tab-2').trigger('click');
                 }
 
                 if(res.code === 400){
@@ -274,8 +273,9 @@ $(document).ready(function(){
                         }, 3000);
                     });
 
-                    $('.session-configuration-tab-2').trigger('click');
                 }
+
+                $('.session-configuration-tab-2').trigger('click');
             },
             error: function(xhr, status, error){}
         })
@@ -289,7 +289,6 @@ $(document).ready(function(){
         $('.update-academic-session-update-btn').data('record-id', '');
         $('#update-academic-session-input-id').val('');
         $('#update-academic-term-input-id').val('');
-        $('#update-academic-session-active-id').removeAttr('checked');
 
         const recordId = $(this).data('record-id');
 
@@ -301,8 +300,16 @@ $(document).ready(function(){
         $('#update-academic-session-input-id').val(currentAcademicSessionVal);
         $('#update-academic-term-input-id').val(currentAcademicTermVal);
 
+        const academicSessionActiveHTML = `
+            <label class="form-check-label update-academic-session-active-label-${recordId}" for="update-academic-session-active-id-${recordId}">Active</label>
+            <input class="form-check-input" type="checkbox" id="update-academic-session-active-id-${recordId}"/>`;
+
+        $('.update-academic-session-active-placeholder').empty();
+
+        $('.update-academic-session-active-placeholder').append(academicSessionActiveHTML);
+
         if(currentAcademicActiveStatus === 'Yes'){
-            $('#update-academic-session-active-id').attr('checked', 'true');
+            $(`#update-academic-session-active-id-${recordId}`).attr('checked', 'true');
         }
 
         $('.update-academic-session-overlay-container').fadeIn('slow');
@@ -312,6 +319,66 @@ $(document).ready(function(){
         $('.update-academic-session-overlay-container').fadeOut('slow');
     })
 
+    $('.update-academic-session-update-btn').click(function(){
+        const recordId = $(this).data('record-id');
+        const updateAcademicSession = $(this).closest('.update-academic-session-modal').find('#update-academic-session-input-id').val();
+        const updateAcademicTerm = $(this).closest('.update-academic-session-modal').find('#update-academic-term-input-id').val();
+        const updateAcademicActive = $(this).closest('.update-academic-session-modal').find('.form-check-input').prop('checked');
+
+        const data = {
+            recordId: recordId,
+            academicSession: updateAcademicSession,
+            academicTerm: updateAcademicTerm,
+            active: updateAcademicActive
+        };
+
+        $.ajax({
+            url: `/academic-sessions/${recordId}`,
+            type: 'PUT',
+            data: data,
+            success: function(response){
+                const res = JSON.parse(response);
+
+                if(res.code === 201){
+                    $('.update-academic-session-overlay-container').fadeOut('slow', function(){
+                        $('.record-updated-successfully').fadeIn('slow');
+
+                        setTimeout(function(){
+
+                            $('.record-updated-successfully').fadeOut('slow');
+
+                        }, 3000);
+                    });
+                }
+
+                if(res.code === 400){
+                    $('.update-academic-session-overlay-container').fadeOut('slow', function(){
+                        $('.record-update-failed').fadeIn('slow');
+
+                        setTimeout(function(){
+
+                            $('.record-update-failed').fadeOut('slow');
+
+                        }, 3000);
+                    });
+                }
+
+                $('.session-configuration-tab-2').trigger('click');
+            },
+            error: function(xhr, status, error){}
+        })
+    })
+
     // Editing academic session (end)
+
+    // Searching academic session (start)
+
+    $('.all-session-search-btn').click(function(){
+        const inputValue = $('.all-session-search-input').val();
+
+        console.log(inputValue)
+    })
+
+    // Searching academic session (end)
 
 })
