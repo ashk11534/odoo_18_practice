@@ -277,7 +277,7 @@
                             <div class="session-configuration-tab-content session-conf-all-ac-y-cnt"
                                  id="session-configuration-tab-content-2">
                                 <div class="all-session-search-container">
-                                    <input type="text" class="all-session-search-input" placeholder="Search..."/>
+                                    <input type="text" class="all-session-search-input" placeholder="Search by session..."/>
                                     <button class="all-session-search-btn">Search</button>
                                 </div>
 
@@ -310,6 +310,7 @@
             </div>
 
             <t t-set="custom_js">
+                <script src="/school_management/static/js/utils/academic_sessions.js"/>
                 <script src="/school_management/static/js/dashboard.js"/>
             </t>
         </t>

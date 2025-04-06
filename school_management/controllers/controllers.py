@@ -38,7 +38,13 @@ class BaseController(http.Controller):
 
         else:
 
-            all_academic_sessions = req.env['sm.academic.session'].sudo().search([])
+            query = kwargs.get('query')
+
+            if query == 'all':
+                all_academic_sessions = req.env['sm.academic.session'].sudo().search([])
+
+            else:
+                all_academic_sessions = req.env['sm.academic.session'].sudo().search([('sm_ac_session', 'ilike', query)])
 
             all_academic_sessions_list = []
 
